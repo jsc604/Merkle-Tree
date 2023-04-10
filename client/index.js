@@ -13,7 +13,7 @@ async function main() {
   const index = niceList.findIndex(n => n === name);
   const proof = merkleTree.getProof(index);
 
-  // Send the proof, name, and root to the server
+  // Send the proof and name to the server
   const { data: gift } = await axios.post(`${serverUrl}/gift`, {
     name,
     proof,
